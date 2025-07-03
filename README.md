@@ -1,7 +1,7 @@
 # Test Task
 
 ## Technology stack
-React, Typescript, Redux Tookkit, RTK Query and PrimeReact UI.
+React, Typescript, Redux Toolkit, RTK Query and PrimeReact UI.
 
 ## Available Scripts
 
