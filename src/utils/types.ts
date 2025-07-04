@@ -7,13 +7,15 @@ export interface IMovie {
 }
 
 export interface IMovieDetailed extends IMovie {
-  Director: string,
-  Released: string,
-  Country: string,
-  Genre: string,
-  Writer: string,
-  Runtime: string,
-  Metascore: string
+  details: {
+    Released: string,
+    Country: string,
+    Genre: string,
+    Runtime: string,
+    Director: string,
+    Writer: string,
+    Metascore: string
+  }
 }
 
 export interface IResponseSearch {

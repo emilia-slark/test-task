@@ -12,7 +12,23 @@ export const api = createApi({
       transformResponse: (response: IResponseSearch) => response.Search
     }),
     getMovieById: build.query<IMovieDetailed, string>({
-      query: (id) => `/?apikey=${API_KEY}&plot=full&i=${id}`
+      query: (id) => `/?apikey=${API_KEY}&plot=full&i=${id}`,
+    transformResponse: (response: any) =>  ({
+        Title:    response.Title,
+        Plot:     response.Plot,
+        Year:     response.Year,
+        Poster:   response.Poster,
+        imdbID:   response.imdbID,
+        details: {
+          Released:  response.Released,
+          Country:   response.Country,
+          Genre:     response.Genre,
+          Runtime:   response.Runtime,
+          Director:  response.Director,
+          Writer:    response.Writer,
+          Metascore: response.Metascore,
+        }
+      })
     }),
   }),
 })

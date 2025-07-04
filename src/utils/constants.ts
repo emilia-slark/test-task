@@ -7,5 +7,6 @@ export enum LABEL {
   CATALOG_INPUT_PLACEHOLDER = "Фильм называется...",
   MORE_DETAILS = "Подробнее",
   SEARCH = "Поиск",
-  FAVORITES = "Избранное"
+  FAVORITES = "Избранное",
+  NO_DATA = "Нет данных"
 }
