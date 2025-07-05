@@ -48,6 +48,7 @@
     ]
   },
   "devDependencies": {
-    "@types/lodash": "^4.17.20"
+    "@types/lodash": "^4.17.20",
+    "react-hook-form": "^7.60.0"
   }
 }

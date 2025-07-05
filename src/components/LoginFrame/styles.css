@@ -1,0 +1,15 @@
+.login-sidebar > .p-sidebar-content {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  & > .login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+
+    /* .login-form__title {
+
+    } */
+  }
+}
