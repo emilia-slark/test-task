@@ -20,8 +20,12 @@ const favoritesSlice = createSlice({
     deleteItem: (state, action: PayloadAction<{ id: string }>) => {
       state.items = state.items.filter(item => item.imdbID !== action.payload.id)
     }
+  },
+  selectors: {
+    getFavorites: (state) => state.items
   }
 });
 
 export const favoritesReducer = favoritesSlice.reducer;
 export const { addItem, deleteItem } = favoritesSlice.actions;
+export const { getFavorites } = favoritesSlice.selectors

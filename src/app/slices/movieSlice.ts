@@ -19,6 +19,9 @@ const moviesSlice = createSlice({
       state.items = action.payload.Search as IMovie[];
     }
   },
+  selectors: {
+    getMoviesCatalog: state => state.items
+  },
   extraReducers: (builder) => {
     builder
       .addMatcher(
@@ -32,3 +35,4 @@ const moviesSlice = createSlice({
 
 export const moviesReducer = moviesSlice.reducer;
 export const { setItems } = moviesSlice.actions;
+export const { getMoviesCatalog } = moviesSlice.selectors

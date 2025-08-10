@@ -1,4 +1,4 @@
-.movie-card {
+.movieCard {
   transition: .1s;
   min-height: min-content;
   overflow: hidden;
@@ -26,6 +26,6 @@
   }
 }
 
-.movie-card:hover {
+.movieCard:hover {
   scale: 1.01;
 }

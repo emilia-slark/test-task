@@ -1,4 +1,5 @@
 import { useAppSelector } from "../app/hooks"
+import { getFavorites } from "../app/slices/favoritesSlice"
 import FavoriteCard from "../components/FavoriteCard"
 import { LABEL } from "../utils/constants"
 import { IMovie } from "../utils/types"
@@ -14,7 +15,7 @@ const handleStatus = (favorites: IMovie[]) => {
 }
 
 export default function FavoritesPage() {
-  const favorites = useAppSelector(state => state.favorites.items)
+  const favorites = useAppSelector(getFavorites)
 
   return (
     <section className="container favorites-list-page">

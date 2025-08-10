@@ -9,6 +9,7 @@ import { IMovie } from '../utils/types';
 import { FetchBaseQueryError } from '@reduxjs/toolkit/dist/query/react';
 import { SerializedError } from '@reduxjs/toolkit';
 import { LABEL } from '../utils/constants';
+import { getMoviesCatalog } from '../app/slices/movieSlice';
 
 const handleStatus = (error: FetchBaseQueryError | SerializedError | undefined, isLoading: boolean, items: IMovie[]) => {
   if (isLoading)
@@ -26,7 +27,7 @@ const handleStatus = (error: FetchBaseQueryError | SerializedError | undefined, 
 
 export default function MovieCatalogPage() {
   const [name, setName] = useState<string>("");
-  const movies = useAppSelector(state => state.movies.items)
+  const movies = useAppSelector(getMoviesCatalog)
   const { error, isLoading } = useGetMoviesByNameQuery(name, { skip: (!name || name === '') });
 
   const handleChange = debounce((e: ChangeEvent<HTMLInputElement>) => setName(e.target.value), 500);

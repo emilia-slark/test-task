@@ -33,10 +33,8 @@ export default function LoginFrame() {
     reset();
   }, [])
 
-  return (<>
-    {isAuthorized ?
-      (<></>) :
-      (<form className="login-form" onSubmit={handleSubmit(onSubmit)}>
+  if (!isAuthorized)
+    return (<form className="login-form" onSubmit={handleSubmit(onSubmit)}>
         <span className='login-form__title'>Введите данные пользователя</span>
         <FloatLabel>
           <InputText
@@ -81,6 +79,8 @@ export default function LoginFrame() {
           disabled={!isValid}
           label='Войти'
           type='submit' />
-      </form>)}
+      </form>)
+
+  return (<>
   </>)
 }
